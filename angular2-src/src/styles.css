@@ -8,3 +8,13 @@
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
 }
+
+
+.example-form {
+  width: 500px;
+  margin: auto;
+}
+
+.example-full-width {
+  width: 100%;
+}

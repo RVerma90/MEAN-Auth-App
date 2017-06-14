@@ -1,3 +1,20 @@
-<p>
-  login works!
-</p>
+<md-card>
+    <md-card-header>
+        <h1>Login</h1>
+    </md-card-header>
+    <form (submit)="onLoginSubmit()" class="example-form">
+        <p>
+            <md-input-container class="example-full-width">
+                <input [(ngModel)]="username" mdInput name="username" placeholder="Username" type="text">
+            </md-input-container>
+        </p>
+
+        <p>
+            <md-input-container class="example-full-width">
+                <input [(ngModel)]="password" mdInput name="password" placeholder="Password" type="password">
+            </md-input-container>
+        </p>
+        <button md-raised-button type="submit" color="accent">Submit</button>
+    </form>
+
+</md-card>

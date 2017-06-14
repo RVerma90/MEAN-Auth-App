@@ -3,7 +3,7 @@ import { ValidateService } from '../services/validate.service';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
-// For input error notification
+// For Notifications based on input
 import { MdSnackBar } from '@angular/material';
 
 @Component({
@@ -40,14 +40,14 @@ export class RegisterComponent implements OnInit {
         if (!this.validateService.validateEmail(user.email)) {
 
             this.snackBar.open('Please use a valid email', action, {
-                duration: 2000,
+                duration: 2000
             });
             return false;
         }
         // Check Email
         if (!this.validateService.validateRegister(user)) {
             this.snackBar.open('Please fill in all fields', action, {
-                duration: 2000,
+                duration: 2000
             });
             return false;
         }
@@ -57,12 +57,12 @@ export class RegisterComponent implements OnInit {
             console.log('registering');
             if (data.success) {
                 this.snackBar.open('You are now registered and can log in', action, {
-                    duration: 2000,
+                    duration: 2000
                 });
                 this.router.navigate(['/login']);
             } else {
                 this.snackBar.open('Something went wrong.', action, {
-                    duration: 2000,
+                    duration: 2000
                 });
                 this.router.navigate(['/register']);
             }
