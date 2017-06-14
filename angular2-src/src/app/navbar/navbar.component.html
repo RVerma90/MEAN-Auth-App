@@ -2,7 +2,9 @@
     <span>MEAN Auth App</span>
     <button md-button [routerLink]="['/']">Home</button>
     <span class="spacer"></span>
-    <button md-button [routerLink]="['/login']">Login</button>
-    <button md-button [routerLink]="['/register']">Register</button>
-    <button md-button (click)="onLogoutClick()">Logout</button>
+    <button *ngIf="authService.loggedIn()" md-button [routerLink]="['/dashboard']">Dashboard</button>
+    <button *ngIf="authService.loggedIn()" md-button [routerLink]="['/profile']">Profile</button>
+    <button *ngIf="!authService.loggedIn()" md-button [routerLink]="['/login']">Login</button>
+    <button *ngIf="!authService.loggedIn()" md-button [routerLink]="['/register']">Register</button>
+    <button *ngIf="authService.loggedIn()" md-button (click)="onLogoutClick()">Logout</button>
 </md-toolbar>

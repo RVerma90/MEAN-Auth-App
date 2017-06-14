@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         this.authService.authenticateUser(user).subscribe(data => {
             if (data.success) {
                 this.authService.storeUserData(data.token, data.user);
-                this.snackBar.open('You are now logged int', action, {
+                this.snackBar.open('You are now logged in', action, {
                     duration: 5000
                 });
                 this.router.navigate(['dashboard']);
